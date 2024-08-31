@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Hoja de Vida Editable</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img id="profile-pic" src="840_560.jpeg" alt="Foto de Perfil" onclick="changeProfilePic()">
+            <h1 id="name" contenteditable="false">Victor Manuel</h1>
+            <p id="title" contenteditable="false">Tecnólogo en Sistemas</p>
+            <hr>
+            <div class="contact-info">
+                <p>Teléfono: <span id="phone" contenteditable="false">3143987705</span></p>
+                <p>Email: <span id="email" contenteditable="false">victor.viera01@usc.edu.co</span></p>
+                <p>Identificación: <span id="id" contenteditable="false">1109115990</span></p>
+                <p>Dirección: <span id="address" contenteditable="false">Calle 123, Lugar País de las Maravillas</span></p>
+            </div>
+            <hr>
+            <div class="color-picker">
+                <input type="color" id="color-picker" onchange="cambiarColorBorde(this.value)">
+            </div>
+            <div class="edit-buttons">
+                <button class="save-button" onclick="saveChanges()">Guardar Información</button>
+                <button class="cancel-button" onclick="cancelEdit()">Cancelar Edición</button>
+            </div>
+            <button class="edit-button" onclick="toggleEditMode()">Editar Información</button>
+        </div>
+        <div class="content">
+            <div class="section">
+                <h2 id="about-heading" onclick="editSection('about-heading')">Sobre Mí</h2>
+                <p id="about" contenteditable="false">Soy Victor Manuel, un Tecnólogo en Sistemas con experiencia en JavaScript y HTML. Me apasiona aprender e innovar, y tengo un historial de logros y reconocimientos destacados.</p>
+            </div>
+            <div class="section">
+                <h2 id="experience-heading" onclick="editSection('experience-heading')">Experiencia</h2>
+                <p id="experience-description" contenteditable="false">Aquí detallo mi experiencia laboral:</p>
+                <ul class="list" id="experienceList">
+                    <li contenteditable="false">Gerente en Brocelle - 2030</li>
+                    <li contenteditable="false">Gerente en Engidea - 2028</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2 id="education-heading" onclick="editSection('education-heading')">Historial Académico</h2>
+                <p id="education-description" contenteditable="false">Aquí detallo mi formación académica y certificaciones:</p>
+                <ul class="list" id="educationList">
+                    <li contenteditable="false">[Título o Certificación] - [Institución] - [Fecha]</li>
+                    <li contenteditable="false">[Título o Certificación] - [Institución] - [Fecha]</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2 id="skills-heading" onclick="editSection('skills-heading')">Habilidades</h2>
+                <p id="skills-description" contenteditable="false">Tengo un amplio conocimiento en:</p>
+                <ul class="list" id="skillsList">
+                    <li contenteditable="false">Habilidad en gestión de proyectos</li>
+                    <li contenteditable="false">Manejo en bases de datos</li>
+                    <li contenteditable="false">JavaScript</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2 id="languages-heading" onclick="editSection('languages-heading')">Idiomas</h2>
+                <p id="languages" contenteditable="false">Español, Inglés</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
